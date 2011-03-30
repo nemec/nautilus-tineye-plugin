@@ -19,6 +19,7 @@ except ImportError:
 BOUNDARY="---------------------------46798320320190039671482364942"
 
 def post_multipart(host, selector, fields, files):
+  # Adapted from http://code.activestate.com/recipes/146306-http-client-to-post-using-multipartform-data/
   content_type, body = encode_multipart_formdata(fields, files)
   h = httplib.HTTP(host)
   h.putrequest('POST', selector)
